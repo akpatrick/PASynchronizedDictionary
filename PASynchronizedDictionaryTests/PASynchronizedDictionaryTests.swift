@@ -26,6 +26,14 @@ class PASynchronizedDictionaryTests: XCTestCase {
         synchronizedDict.removeAll()
     }
     
+    // MARK: - Init test
+    
+    func testCanInitWithCustomQueue() {
+        let queue = DispatchQueue(label: "io.customQueue", qos: .userInitiated, attributes: .concurrent)
+        let syncDict = PASynchronizedDictionary<Int>(queue: queue)
+        XCTAssertEqual("io.customQueue", syncDict.getQueueLabel())
+    }
+    
     // MARK: - Read methods tests
     
     func testCount() {
@@ -70,6 +78,10 @@ class PASynchronizedDictionaryTests: XCTestCase {
     func testGetOrDefault() {
         XCTAssertEqual(500, synchronizedDict.getOrDefault(key: "500", defaultValue: 5000))
         XCTAssertEqual(5000, synchronizedDict.getOrDefault(key: "NON_PRESENT_KEY", defaultValue: 5000))
+    }
+    
+    func testGetQueueLabel() {
+        XCTAssertEqual("io.PASynchronizedDictionary", synchronizedDict.getQueueLabel())
     }
     
     // MARK: - Write methods tests

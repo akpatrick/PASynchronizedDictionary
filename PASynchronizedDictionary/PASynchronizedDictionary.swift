@@ -8,11 +8,14 @@
 
 import Foundation
 
-public class PASynchronizedDictionary<Element> {
-    private final let queue = DispatchQueue(label: "io.PASynchronizedDictionary", qos: .userInitiated, attributes: .concurrent)
+public final class PASynchronizedDictionary<Element> {
+    private final let defaultQueue = DispatchQueue(label: "io.PASynchronizedDictionary", qos: .userInitiated, attributes: .concurrent)
+    
+    private final let queue: DispatchQueue!
     private final var dict: [String: Element]!
     
-    public init(dict: [String: Element] = [String: Element]()) {
+    public init(queue: DispatchQueue? = nil, dict: [String: Element] = [String: Element]()) {
+        self.queue = queue == nil ? defaultQueue : queue
         self.dict = dict
     }
 }
@@ -90,6 +93,10 @@ public extension PASynchronizedDictionary where Element: Equatable {
             result = dict[key] ?? defaultValue
         }
         return result
+    }
+    
+    public func getQueueLabel() -> String {
+        return queue.label
     }
 }
 
