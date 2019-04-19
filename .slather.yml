@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+xcodeproj: PASynchronizedDictionary.xcodeproj
+scheme: PASynchronizedDictionary
+output_directory: reports
+ignore:
+  - PASynchronizedDictionaryTests/*
