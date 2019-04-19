@@ -1,7 +1,8 @@
 # PASynchronizedDictionary
 
 [![Build Status][build-status-badge]][build-status-url]
-[![codecov][code-cov-badge]][code-cove-url]
+[![codecov][code-cov-badge]][code-cov-url]
+[![doccov][doc-cov-badge]][doc-cov-url]
 [![Version][version-badge]][version-url]
 [![License][license-badge]][license-url]
 [![Platform][platform-badge]][platform-url]
@@ -45,6 +46,10 @@ let synchronizedDict = PASynchronizedDictionary<Int>(dict: dict)
 let synchronizedDict = PASynchronizedDictionary<Int>(queue: customQueue, dict: dict) 
 ```
 
+## Documentation
+
+Documentation for the project can be found [here](https://akpatrick.github.io/PASynchronizedDictionary/)
+
 ## Author
 
 Patrick Akoury, patrick.akoury@outlook.com
@@ -54,7 +59,8 @@ Patrick Akoury, patrick.akoury@outlook.com
 PASynchronizedDictionary is available under the MIT license. See the LICENSE file for more info.
 
 [build-status-url]:	https://travis-ci.com/akpatrick/PASynchronizedDictionary
-[code-cove-url]:	https://codecov.io/gh/akpatrick/PASynchronizedDictionary
+[code-cov-url]:	https://codecov.io/gh/akpatrick/PASynchronizedDictionary
+[doc-cov-url]: https://akpatrick.github.io/PASynchronizedDictionary/
 [version-url]:	https://cocoapods.org/pods/PASynchronizedDictionary
 [license-url]:	https://cocoapods.org/pods/PASynchronizedDictionary
 [platform-url]:	https://cocoapods.org/pods/PASynchronizedDictionary
@@ -62,6 +68,7 @@ PASynchronizedDictionary is available under the MIT license. See the LICENSE fil
 
 [build-status-badge]:	https://travis-ci.com/akpatrick/PASynchronizedDictionary.svg?branch=master
 [code-cov-badge]:	https://codecov.io/gh/akpatrick/PASynchronizedDictionary/branch/master/graph/badge.svg
+[doc-cov-badge]:	https://github.com/akpatrick/PASynchronizedDictionary/blob/gh-pages/badge.svg
 [version-badge]:	https://img.shields.io/cocoapods/v/PASynchronizedDictionary.svg?style=flat
 [license-badge]:	https://img.shields.io/cocoapods/l/PASynchronizedDictionary.svg?style=flat
 [platform-badge]:	https://img.shields.io/cocoapods/p/PASynchronizedDictionary.svg?style=flat
