@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>README  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="README  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html"> Reference</a>
+      <img class="carat" src="img/carat.png" />
+      README  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PASynchronizedDictionary.html">PASynchronizedDictionary</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <h1 id='pasynchronizeddictionary' class='heading'>PASynchronizedDictionary</h1>
+
+<p><a href="https://travis-ci.com/akpatrick/PASynchronizedDictionary"><img src="https://travis-ci.com/akpatrick/PASynchronizedDictionary.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/akpatrick/PASynchronizedDictionary"><img src="https://codecov.io/gh/akpatrick/PASynchronizedDictionary/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://github.com/akpatrick/PASynchronizedDictionary/blob/master/docs/badge.svg"><img src="https://github.com/akpatrick/PASynchronizedDictionary/blob/master/docs/badge.svg" alt="doccov"></a>
+<a href="https://cocoapods.org/pods/PASynchronizedDictionary"><img src="https://img.shields.io/cocoapods/v/PASynchronizedDictionary.svg?style=flat" alt="Version"></a>
+<a href="https://cocoapods.org/pods/PASynchronizedDictionary"><img src="https://img.shields.io/cocoapods/l/PASynchronizedDictionary.svg?style=flat" alt="License"></a>
+<a href="https://cocoapods.org/pods/PASynchronizedDictionary"><img src="https://img.shields.io/cocoapods/p/PASynchronizedDictionary.svg?style=flat" alt="Platform"></a></p>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>PASynchronizedDictionary is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'PASynchronizedDictionary'</span>
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='import' class='heading'>Import</h3>
+
+<p>First you need to import the library</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PASynchronizedDictionary</span>
+</code></pre>
+<h3 id='initialization' class='heading'>Initialization</h3>
+
+<p>When initializing a synchronized dictionary you have the option to pass a custom queue and an existing dictionary.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">customQueue</span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="s">"io.customQueue"</span><span class="p">,</span> <span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="o">.</span><span class="n">concurrent</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">dict</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]()</span>
+
+<span class="c1">// Initialize default synchronized dictionary</span>
+<span class="k">let</span> <span class="nv">synchronizedDict</span> <span class="o">=</span> <span class="kt">PASynchronizedDictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">()</span>
+
+<span class="c1">// Initialize with a custom queue</span>
+<span class="k">let</span> <span class="nv">synchronizedDict</span> <span class="o">=</span> <span class="kt">PASynchronizedDictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">queue</span><span class="p">:</span> <span class="n">customQueue</span><span class="p">)</span>
+
+<span class="c1">// Initialize with an existing dictionary</span>
+<span class="k">let</span> <span class="nv">synchronizedDict</span> <span class="o">=</span> <span class="kt">PASynchronizedDictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">dict</span><span class="p">:</span> <span class="n">dict</span><span class="p">)</span>
+
+<span class="c1">// Initialize with both a custom queue and an existing dictionary</span>
+<span class="k">let</span> <span class="nv">synchronizedDict</span> <span class="o">=</span> <span class="kt">PASynchronizedDictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">queue</span><span class="p">:</span> <span class="n">customQueue</span><span class="p">,</span> <span class="nv">dict</span><span class="p">:</span> <span class="n">dict</span><span class="p">)</span> 
+</code></pre>
+<h2 id='author' class='heading'>Author</h2>
+
+<p>Patrick Akoury, <a href="mailto:patrick.akoury@outlook.com">patrick.akoury@outlook.com</a></p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>PASynchronizedDictionary is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-04-19)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
