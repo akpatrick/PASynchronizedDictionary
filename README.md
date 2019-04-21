@@ -4,7 +4,6 @@
 [![codecov][code-cov-badge]][code-cov-url]
 [![doccov][doc-cov-badge]][doc-cov-url]
 [![Version][version-badge]][version-url]
-[![License][license-badge]][license-url]
 [![Platform][platform-badge]][platform-url]
 
 ## Installation
